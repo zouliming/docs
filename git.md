@@ -106,6 +106,12 @@ test
 	git quick commit
 	git push current branch
 
+## 如果有些文件已经提交过了，但是想从远程删除掉
+git rm --cached <file> will completely remove the file's contents from the index. This means that on commit the file will be removed from the HEAD commit. (If the file was only added to the index and not yet tracked this is a "no-op".)
+
+git reset -- <file> resets the contents of the file in the index to be the same as the head commit. This means that on commit no changes will be committed to the file. This operation is not valid if there is no tracked version of the file in the HEAD commit.
+
+>下次有空再翻译
 
 ****
 ## 参考
